@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./Servicemandashboard.css";
+import "./ServicemanDashboard.css";
 
 // ── Mock Data ──────────────────────────────────────────
 const mechanic = {

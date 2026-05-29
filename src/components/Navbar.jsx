@@ -1,27 +1,27 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import BookingModal from "./BookingModal";
+import BookingModal from "../components/BookingModal";
 
 const Navbar = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   return (
     <>
-      <nav
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: "12px",
-          padding: "14px 20px",
-          backgroundColor: "#ffffff",
-          borderBottom: "1px solid #f0f0f0",
-          position: "sticky",
-          top: "0",
-          zIndex: "1000",
-        }}
-      >
+     <nav
+  style={{
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: "12px",
+    padding: "14px 20px",
+    backgroundColor: "#ffffff",
+    borderBottom: "1px solid #f0f0f0",
+    position: "sticky",
+    top: "0",
+    zIndex: "1000",
+  }}
+>
         {/* Logo */}
         <Link
           to="/"
