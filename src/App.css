@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #1d1d1d;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+html, body, #root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+section {
+  max-width: 100%;
+}
+
+/* ===== MOBILE FIXES ===== */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  nav {
+    flex-wrap: wrap !important;
+    padding: 12px 16px !important;
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 13px !important;
+  }
+
+  nav button {
+    padding: 8px 14px !important;
+    font-size: 13px !important;
+  }
+
+  /* Hero Section */
+  section {
+    flex-direction: column !important;
+    padding: 24px 16px !important;
+  }
+
+  section img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+  }
+
+  h1 {
+    font-size: 26px !important;
+  }
+
+  p {
+    font-size: 14px !important;
+  }
+
+  input, button {
+    font-size: 13px !important;
+  }
+}
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 12px 16px !important;
+  }
+
+  nav > div {
+    width: 100% !important;
+    justify-content: flex-start !important;
+  }
+}

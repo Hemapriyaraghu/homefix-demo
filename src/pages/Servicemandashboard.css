@@ -1,0 +1,974 @@
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap");
+
+/* ══════════════════════════════════
+   ROOT & LAYOUT
+══════════════════════════════════ */
+.sd-root {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f5f7;
+  font-family: "DM Sans", sans-serif;
+  color: #1a1a1a;
+}
+
+/* ══════════════════════════════════
+   SIDEBAR
+══════════════════════════════════ */
+.sd-sidebar {
+  width: 240px;
+  min-width: 240px;
+  background: #1a1a2e;
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 24px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.sd-sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 20px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.sd-brand-icon {
+  font-size: 1.4rem;
+  background: #f15c22;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+.sd-brand-name {
+  font-family: "Syne", sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.sd-sidebar__profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  margin-bottom: 8px;
+}
+
+.sd-avatar {
+  font-size: 2rem;
+  background: rgba(241,92,34,0.15);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sd-profile-name {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #fff;
+  margin: 0 0 2px;
+}
+
+.sd-profile-skill {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin: 0 0 4px;
+}
+
+.sd-verified {
+  font-size: 0.7rem;
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  padding: 2px 8px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+/* Nav */
+.sd-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 12px;
+  gap: 2px;
+}
+
+.sd-nav__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: none;
+  background: transparent;
+  color: #aaa;
+  font-size: 0.88rem;
+  font-weight: 500;
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.18s ease;
+}
+
+.sd-nav__item:hover {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+}
+
+.sd-nav__item--active {
+  background: #f15c22;
+  color: #fff;
+  font-weight: 600;
+}
+
+.sd-nav__icon {
+  font-size: 1rem;
+  width: 20px;
+  text-align: center;
+}
+
+.sd-logout {
+  margin: 0 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: transparent;
+  color: #888;
+  font-size: 0.85rem;
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.18s ease;
+}
+
+.sd-logout:hover {
+  background: rgba(255,80,80,0.1);
+  color: #ff6b6b;
+  border-color: rgba(255,80,80,0.2);
+}
+
+/* ══════════════════════════════════
+   MAIN
+══════════════════════════════════ */
+.sd-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Topbar */
+.sd-topbar {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 0 28px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.sd-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.sd-topbar__title {
+  font-family: "Syne", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  flex: 1;
+}
+
+.sd-topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.sd-topbar__city {
+  font-size: 0.82rem;
+  color: #888;
+  background: #f5f5f5;
+  padding: 6px 12px;
+  border-radius: 50px;
+}
+
+/* Content */
+.sd-content {
+  padding: 28px;
+  flex: 1;
+}
+
+.sd-section {
+  animation: fadeUp 0.3s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ══════════════════════════════════
+   OVERVIEW
+══════════════════════════════════ */
+.sd-welcome {
+  margin-bottom: 24px;
+}
+
+.sd-welcome h1 {
+  font-family: "Syne", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0 0 6px;
+  color: #1a1a1a;
+}
+
+.sd-welcome p {
+  color: #666;
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* Stat Cards */
+.sd-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.sd-stat-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  border: 1px solid #f0f0f0;
+  transition: transform 0.2s ease;
+}
+
+.sd-stat-card:hover {
+  transform: translateY(-2px);
+}
+
+.sd-stat-card--orange {
+  background: linear-gradient(135deg, #f15c22, #d44d18);
+  border: none;
+}
+
+.sd-stat-card--orange .sd-stat-card__value,
+.sd-stat-card--orange .sd-stat-card__label {
+  color: #fff;
+}
+
+.sd-stat-card__icon {
+  font-size: 1.6rem;
+}
+
+.sd-stat-card__value {
+  font-family: "Syne", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.sd-stat-card__label {
+  font-size: 0.75rem;
+  color: #888;
+  font-weight: 500;
+}
+
+/* ── Card ── */
+.sd-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  border: 1px solid #f0f0f0;
+  margin-bottom: 20px;
+}
+
+.sd-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sd-card__header h3 {
+  font-family: "Syne", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+.sd-link {
+  background: none;
+  border: none;
+  color: #f15c22;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* Job list (overview) */
+.sd-job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sd-job-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.sd-job-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.sd-job-time {
+  font-family: "Syne", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #f15c22;
+  min-width: 64px;
+}
+
+.sd-job-info {
+  flex: 1;
+}
+
+.sd-job-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0 0 3px;
+  color: #1a1a1a;
+}
+
+.sd-job-customer {
+  font-size: 0.78rem;
+  color: #888;
+  margin: 0;
+}
+
+/* Reviews preview */
+.sd-reviews-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sd-review-item {
+  padding: 14px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.sd-review-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.sd-review-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.sd-review-customer {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #1a1a1a;
+}
+
+.sd-review-comment {
+  font-size: 0.83rem;
+  color: #666;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ══════════════════════════════════
+   TODAY'S JOBS
+══════════════════════════════════ */
+.sd-section-header {
+  margin-bottom: 24px;
+}
+
+.sd-section-header h2 {
+  font-family: "Syne", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0 0 4px;
+}
+
+.sd-section-header p {
+  color: #888;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.sd-job-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sd-job-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px 24px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  border: 1px solid #f0f0f0;
+  transition: transform 0.2s ease;
+}
+
+.sd-job-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(241,92,34,0.1);
+}
+
+.sd-job-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.sd-job-id {
+  font-size: 0.72rem;
+  color: #bbb;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.sd-job-card__top h3 {
+  font-family: "Syne", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.sd-job-card__details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+
+.sd-job-card__details p {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0;
+}
+
+.sd-job-card__actions {
+  display: flex;
+  gap: 10px;
+}
+
+/* ── Buttons ── */
+.sd-btn {
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.83rem;
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.sd-btn--primary {
+  background: #f15c22;
+  color: #fff;
+}
+
+.sd-btn--primary:hover {
+  background: #d44d18;
+}
+
+.sd-btn--outline {
+  background: transparent;
+  border: 1.5px solid #ddd;
+  color: #555;
+}
+
+.sd-btn--outline:hover {
+  border-color: #f15c22;
+  color: #f15c22;
+}
+
+/* ── Badges ── */
+.badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.badge--confirmed {
+  background: #f0fff4;
+  color: #16a34a;
+}
+
+.badge--pending {
+  background: #fffbeb;
+  color: #d97706;
+}
+
+.badge--completed {
+  background: #f0f9ff;
+  color: #0284c7;
+}
+
+/* ══════════════════════════════════
+   JOB HISTORY TABLE
+══════════════════════════════════ */
+.sd-table-wrap {
+  overflow-x: auto;
+}
+
+.sd-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.sd-table th {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-bottom: 2px solid #f0f0f0;
+  white-space: nowrap;
+}
+
+.sd-table td {
+  padding: 14px 14px;
+  border-bottom: 1px solid #f5f5f5;
+  color: #333;
+}
+
+.sd-table tr:last-child td {
+  border-bottom: none;
+}
+
+.sd-table tr:hover td {
+  background: #fafafa;
+}
+
+/* ══════════════════════════════════
+   EARNINGS
+══════════════════════════════════ */
+.sd-earnings-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.sd-earning-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  border: 1px solid #f0f0f0;
+}
+
+.sd-earning-card--highlight {
+  background: linear-gradient(135deg, #f15c22, #d44d18);
+  border: none;
+}
+
+.sd-earning-card--highlight .sd-earning-label,
+.sd-earning-card--highlight .sd-earning-value,
+.sd-earning-card--highlight .sd-earning-sub {
+  color: #fff;
+}
+
+.sd-earning-card--pending {
+  border: 1.5px dashed #f15c22;
+}
+
+.sd-earning-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #888;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.sd-earning-value {
+  font-family: "Syne", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 6px;
+}
+
+.sd-earning-sub {
+  font-size: 0.78rem;
+  color: #aaa;
+  margin: 0;
+}
+
+.sd-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.sd-breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.sd-breakdown-row:last-child {
+  border-bottom: none;
+}
+
+.sd-breakdown-service {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 3px;
+}
+
+.sd-breakdown-date {
+  font-size: 0.78rem;
+  color: #aaa;
+  margin: 0;
+}
+
+.sd-breakdown-amount {
+  font-family: "Syne", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f15c22;
+}
+
+/* ══════════════════════════════════
+   PROFILE
+══════════════════════════════════ */
+.sd-profile-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  border: 1px solid #f0f0f0;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.sd-profile-avatar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.sd-profile-avatar {
+  font-size: 4rem;
+  background: #fff8f5;
+  border: 3px solid #f15c22;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sd-profile-verified {
+  font-size: 0.75rem;
+  background: rgba(34,197,94,0.1);
+  color: #16a34a;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-weight: 700;
+}
+
+.sd-profile-details {
+  flex: 1;
+}
+
+.sd-profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.sd-profile-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sd-profile-field label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.sd-profile-field input {
+  padding: 11px 14px;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-family: "DM Sans", sans-serif;
+  color: #1a1a1a;
+  background: #fafafa;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.sd-profile-field input:focus {
+  border-color: #f15c22;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(241,92,34,0.1);
+}
+
+.sd-profile-field input:disabled {
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+/* ══════════════════════════════════
+   REVIEWS
+══════════════════════════════════ */
+.sd-rating-summary {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  border: 1px solid #f0f0f0;
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sd-rating-big {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 100px;
+}
+
+.sd-rating-number {
+  font-family: "Syne", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #f15c22;
+  line-height: 1;
+}
+
+.sd-rating-big p {
+  font-size: 0.78rem;
+  color: #aaa;
+  margin: 0;
+  text-align: center;
+}
+
+.sd-rating-bars {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sd-rating-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.sd-rating-bar {
+  flex: 1;
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.sd-rating-bar__fill {
+  height: 100%;
+  background: #f15c22;
+  border-radius: 50px;
+  transition: width 0.5s ease;
+}
+
+.sd-reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sd-review-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px 22px;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  border: 1px solid #f0f0f0;
+}
+
+.sd-review-card__top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.sd-review-card__avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f15c22, #d44d18);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sd-review-card__name {
+  font-weight: 700;
+  font-size: 0.88rem;
+  margin: 0 0 2px;
+  color: #1a1a1a;
+}
+
+.sd-review-card__date {
+  font-size: 0.75rem;
+  color: #bbb;
+  margin: 0;
+}
+
+.sd-review-card__top .stars {
+  margin-left: auto;
+}
+
+.sd-review-card__comment {
+  font-size: 0.85rem;
+  color: #555;
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Stars ── */
+.stars { display: inline-flex; gap: 2px; }
+.star { color: #ddd; font-size: 0.9rem; }
+.star--filled { color: #f59e0b; }
+
+/* ══════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════ */
+@media (max-width: 1024px) {
+  .sd-stats-grid,
+  .sd-earnings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .sd-sidebar {
+    position: fixed;
+    left: -240px;
+    top: 0;
+    height: 100vh;
+    transition: left 0.28s ease;
+    z-index: 200;
+  }
+
+  .sd-sidebar--open {
+    left: 0;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.3);
+  }
+
+  .sd-hamburger {
+    display: block;
+  }
+
+  .sd-content {
+    padding: 20px 16px;
+  }
+
+  .sd-stats-grid,
+  .sd-earnings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sd-profile-card {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .sd-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sd-rating-summary {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .sd-job-card__actions {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .sd-stats-grid,
+  .sd-earnings-grid {
+    grid-template-columns: 1fr;
+  }
+}

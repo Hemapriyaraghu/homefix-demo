@@ -1,0 +1,429 @@
+/* ── Google Font ── */
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap");
+
+/* ══════════════════════════════════
+   AUTH PAGE LAYOUT
+══════════════════════════════════ */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* ══════════════════════════════════
+   LEFT PANEL
+══════════════════════════════════ */
+.auth-left {
+  flex: 1;
+  background: linear-gradient(145deg, #f15c22 0%, #c0390d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-left__content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  max-width: 400px;
+}
+
+.auth-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.auth-brand__icon {
+  font-size: 1.6rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.auth-brand__name {
+  font-family: "Syne", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.auth-left__title {
+  font-family: "Syne", sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 20px;
+  color: #fff;
+}
+
+.auth-left__title span {
+  color: #ffd4c2;
+}
+
+.auth-left__sub {
+  font-size: 1rem;
+  opacity: 0.88;
+  line-height: 1.6;
+  margin: 0 0 36px;
+}
+
+/* Stats row */
+.auth-left__stats {
+  display: flex;
+  gap: 28px;
+}
+
+.auth-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.auth-stat strong {
+  font-family: "Syne", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.auth-stat span {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  white-space: nowrap;
+}
+
+/* Perks list */
+.auth-left__perks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.perk {
+  font-size: 0.9rem;
+  opacity: 0.92;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 10px 16px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+}
+
+/* Decorative blobs */
+.auth-left__blob {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.07);
+  pointer-events: none;
+}
+
+.blob-1 {
+  width: 320px;
+  height: 320px;
+  bottom: -80px;
+  right: -80px;
+}
+
+.blob-2 {
+  width: 180px;
+  height: 180px;
+  top: 40px;
+  right: 60px;
+}
+
+/* ══════════════════════════════════
+   RIGHT PANEL
+══════════════════════════════════ */
+.auth-right {
+  width: 480px;
+  min-width: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 40px 32px;
+  overflow-y: auto;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-card--signup {
+  max-width: 420px;
+}
+
+/* Mobile logo */
+.auth-card__logo {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #f15c22;
+  margin-bottom: 28px;
+}
+
+.auth-card__logo span {
+  font-size: 1.3rem;
+}
+
+.auth-card__title {
+  font-family: "Syne", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 6px;
+}
+
+.auth-card__sub {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0 0 28px;
+}
+
+/* ══════════════════════════════════
+   ROLE TOGGLE
+══════════════════════════════════ */
+.role-toggle {
+  display: flex;
+  background: #f5f5f5;
+  border-radius: 50px;
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.role-btn {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 50px;
+  border: none;
+  background: transparent;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #777;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: "DM Sans", sans-serif;
+}
+
+.role-btn--active {
+  background: #f15c22;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(241, 92, 34, 0.35);
+}
+
+.role-hint {
+  font-size: 0.8rem;
+  color: #aaa;
+  text-align: center;
+  margin: 0 0 24px;
+}
+
+/* ══════════════════════════════════
+   FORM
+══════════════════════════════════ */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.auth-field label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #444;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.auth-field input,
+.auth-field select {
+  padding: 12px 14px;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-family: "DM Sans", sans-serif;
+  color: #1a1a1a;
+  background: #fafafa;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.auth-field input:focus,
+.auth-field select:focus {
+  border-color: #f15c22;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(241, 92, 34, 0.1);
+}
+
+.toggle-password {
+  background: none;
+  border: none;
+  font-size: 0.75rem;
+  color: #f15c22;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: "DM Sans", sans-serif;
+  padding: 0;
+}
+
+.auth-forgot {
+  text-align: right;
+  margin-top: -8px;
+}
+
+.auth-forgot a {
+  font-size: 0.8rem;
+  color: #f15c22;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-forgot a:hover {
+  text-decoration: underline;
+}
+
+/* ── Message ── */
+.auth-message {
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.auth-message--error {
+  background: #fff3f0;
+  color: #c0390d;
+  border: 1px solid #ffd4c2;
+}
+
+.auth-message--success {
+  background: #f0fff4;
+  color: #1a7a3f;
+  border: 1px solid #b7f5d0;
+}
+
+/* ── Submit Button ── */
+.auth-submit {
+  width: 100%;
+  padding: 14px;
+  background: #f15c22;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: "DM Sans", sans-serif;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  margin-top: 4px;
+}
+
+.auth-submit:hover:not(:disabled) {
+  background: #d44d18;
+  transform: translateY(-1px);
+}
+
+.auth-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ── Spinner ── */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Switch link ── */
+.auth-switch {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 24px;
+}
+
+.auth-switch a {
+  color: #f15c22;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+/* ── Serviceman fields animation ── */
+.auth-serviceman-fields {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ══════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════ */
+@media (max-width: 860px) {
+  .auth-left {
+    display: none;
+  }
+
+  .auth-right {
+    width: 100%;
+    min-width: unset;
+    padding: 40px 24px;
+  }
+
+  .auth-card__logo {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-card__title {
+    font-size: 1.5rem;
+  }
+}
