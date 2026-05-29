@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import BookingModal from "../components/BookingModal";
+import BookingModal from "./BookingModal";
 
 const Navbar = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
